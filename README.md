@@ -1,6 +1,6 @@
 # Nodejs project weather and localization
 
-# nodejs, axios for http request, require for interface, dotenv for environment vareiables and fs for create and sabe JSON
+# nodejs, axios for http request, require for interface, dotenv for environment vareiables and fs for create and save JSON
 
 ```
 ======================

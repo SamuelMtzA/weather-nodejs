@@ -99,47 +99,9 @@ const listarLugares = async (lugares = []) => {
   return id;
 };
 
-//funcion de confirmacion de borrar el elemento
-const confirmar = async (messsage) => {
-  const question = {
-    type: "confirm",
-    name: "ok",
-    messsage,
-  };
-  const { ok } = await inquirer.prompt(question);
-  return ok;
-};
-
-const mostrarListadoChck = async (tareas = []) => {
-  //crear menu para elegir cual borrar
-  const choices = tareas.map((tarea, i) => {
-    const idx = `${i + 1}.`;
-    return {
-      value: tarea.id,
-      name: `${idx} ${tarea.desc}`,
-      checked: tarea.compleadoFecha ? true : false,
-    };
-  });
-
-  //al dar click a la seleccion despliega la opcion para borrar
-  const pregunta = [
-    {
-      type: "checkbox",
-      name: "ids",
-      message: "Seleccione",
-      choices,
-    },
-  ];
-
-  const { ids } = await inquirer.prompt(pregunta);
-  return ids;
-};
-
 module.exports = {
   inquirerMenu,
   inquirerPausa,
   leerInput,
   listarLugares,
-  confirmar,
-  mostrarListadoChck,
 };
